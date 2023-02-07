@@ -5,21 +5,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="assets/css/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="Сеть кафе «Сладкая выпечка»">
+    <meta name="keywords" content="Сеть кафе «Сладкая выпечка»">
+
     <title>Сладкая выпечка</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
 
 <!-- header -->
-<header class="header">
+<header class="header" id="header">
     <div class="container">
         <div class="header__inner">
-            <div class="header__item">
-                <h1 class="header__logo">Сладкая выпечка</h1>
-                <object class="header__icon" id="cupcake" data="assets/images/logo/logo_icon.svg" type="image/svg+xml"></object>
+            <div class="header__logo">
+                <h1 class="header__title">Сладкая выпечка</h1>
+                <svg class="header__icon" version="1.1" id="cupcake" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                    <path d="M225.221,297c4.312,0,8.139-2.76,9.502-6.849l32.945-99.275c4.177-2.916,8.727-6.751,12.938-11.689
+                    c11.172-13.102,22.192-36.611,11.248-74.216C275.507,48.79,190.19,48.881,139.198,48.875l-3.58,0.002
+                    c-16.158,0-27.127-6.009-33.534-18.371c-5.166-9.967-5.32-20.43-5.321-20.489c0-3.549-1.878-6.834-4.937-8.634
+                    c-3.06-1.799-6.843-1.847-9.944-0.122C78.838,2.951,7.282,43.367,1.139,104.13c-2.88,28.478,6.341,56.116,32.623,82.323
+                    l35.336,103.698c1.363,4.09,5.191,6.849,9.503,6.849H225.221z M21.064,106.2c2.876-28.702,25.199-52.979,43.978-68.613
+                    c-3.349,13.262-4.678,29.392,2.343,42.916c7.358,14.178,21.809,22.549,42.946,24.881c47.793,5.271,75.637,12.104,93.104,22.849
+                    c17.414,10.711,25.335,26.031,26.272,50.982H57.922C31.005,155.266,18.607,130.715,21.064,106.2z M161.925,276.968v-77.721h33.698
+                    l-12.952,77.721H161.925z M121.148,276.968l-12.952-77.721h33.697v77.721H121.148z M59.914,199.247h27.974l12.951,77.721H85.821
+                    L59.914,199.247z M218.002,276.968h-15.021l12.951-77.721h27.974L218.002,276.968z M265.888,165.564
+                    c-5.631,6.844-12.291,10.827-16.172,12.745c-1.239-31.527-12.647-52.906-35.786-67.14c-20.421-12.561-49.799-20.006-101.402-25.696
+                    c-14.057-1.551-23.259-6.317-27.349-14.169c-4.427-8.494-3.147-20.245-0.317-30.526c7.203,13.253,21.747,28.132,50.756,28.132
+                    l3.593-0.002c45.397-0.017,121.265-0.075,133.411,41.66C279.298,133.51,277.033,152.013,265.888,165.564z"/>
+                </svg>
             </div>
-            <div class="header__links">
+            <div class="header__links" id="headerLinks">
                 <a class="header__link" href="#">sladkaya_vipechka@gmail.com</a>
                 <a class="header__link" href="tel:+7921*******">+7-921-***-**-**</a>
                 <div class="header__button">
@@ -32,12 +61,17 @@
                     </button>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <button class="arrow" type="button" id="headerButton">
+                <span class="arrow__item">Menu</span>
+            </button>
+
+        </div> <!-- /.header__inner   -->
+    </div> <!-- /.container   -->
 </header> <!-- /.header   -->
 
 <!-- intro -->
-<div class="intro">
+<div class="intro" id="intro">
     <div class="container">
         <div class="intro__inner">
             <h2 class="intro__title">Печём с любовью!</h2>
@@ -145,68 +179,80 @@
 <div class="products">
     <h2 class="products__main__title">Наша продукция</h2>
     <div class="container">
-        <div class="products__item">
-            <div class="products__content">
-                <h3 class="products__title">Выпечка</h3>
-                <div class="products__text">
-                    <p>В наших кафе всегда можно почувствовать аромат свежей выпечки.</p>
-                    <p>Ежедневно мы выпекаем хрустящие круассаны, сладкие и сытные слойки с начинкой на любой вкус.</p>
-                </div>
-            </div>
-            <div class="products__photo">
-                <img class="products__img" src="assets/images/products/1.jpg" alt="">
-            </div>
-        </div>
+       <div class="products__slider" id="productsSlider">
 
-       <!--<div class="products__item">
-                <div class="products__content">
-                    <h3 class="products__title">Торты</h3>
-                    <div class="products__text">
-                        <p>В наших кафе всегда можно приобрести свежие торты из натуральных ингредиентов, приготовленные как по классическим, так и по оригинальным рецептам, которыми мы гордимся.</p>
+            <div class="slick-item">
+                <div class="products__item">
+                    <div class="products__content">
+                        <h3 class="products__title">Выпечка</h3>
+                        <div class="products__text">
+                            <p>В наших кафе всегда можно почувствовать аромат свежей выпечки.</p>
+                            <p>Ежедневно мы выпекаем хрустящие круассаны, сладкие и сытные слойки с начинкой на любой вкус.</p>
+                        </div>
+                    </div>
+                    <div class="products__photo">
+                        <img class="products__img" src="assets/images/products/1.jpg" alt="">
                     </div>
                 </div>
-                <div class="products__photo">
-                    <img class="products__img" src="assets/images/products/2.jpg" alt="">
+            </div>
+
+           <div class="slick-item">
+               <div class="products__item">
+                    <div class="products__content">
+                        <h3 class="products__title">Торты</h3>
+                        <div class="products__text">
+                            <p>В наших кафе всегда можно приобрести свежие торты из натуральных ингредиентов, приготовленные как по классическим, так и по оригинальным рецептам, которыми мы гордимся.</p>
+                        </div>
+                    </div>
+                    <div class="products__photo">
+                        <img class="products__img" src="assets/images/products/2.jpg" alt="">
+                    </div>
                 </div>
+            </div>
+
+            <div class="slick-item">
+                <div class="products__item">
+                    <div class="products__content">
+                        <h3 class="products__title">Пирожные</h3>
+                        <div class="products__text">
+                            <p>Мы предлагаем нашим гостям широкий выбор пирожных: от фирменных эклеров до шотландских десертов и наборов мини-корзиночек со свежими ягодами и фруктами.</p>
+                        </div>
+                    </div>
+                    <div class="products__photo">
+                        <img class="products__img" src="assets/images/products/3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+             <div class="slick-item">
+                 <div class="products__item">
+                    <div class="products__content">
+                        <h3 class="products__title">Печенье</h3>
+                        <div class="products__text">
+                            <p>Все наши печенья приготовлены по авторским рецептам, проверенным не только временем, но и нашими клиентами.</p>
+                        </div>
+                    </div>
+                    <div class="products__photo">
+                        <img class="products__img" src="assets/images/products/4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slick-item">
+                <div class="products__item">
+                    <div class="products__content">
+                        <h3 class="products__title">Хлеб</h3>
+                        <div class="products__text">
+                            <p>К любому процессу, связанному с приготовлением хлеба, у нас особый подход. Поэтому мы ежедневно выпекаем хлеб с неизменным качеством и согласно всем актуальным стандартам.</p>
+                        </div>
+                    </div>
+                    <div class="products__photo">
+                        <img class="products__img" src="assets/images/products/5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="products__item">
-            <div class="products__content">
-                <h3 class="products__title">Пирожные</h3>
-                <div class="products__text">
-                    <p>Нежные пирожные из натуральных ингредиентов — это вкусное угощение на все случаи жизни.</p>
-                    <p>Мы предлагаем нашим гостям широкий выбор пирожных: от фирменных эклеров до шотландских десертов и наборов мини-корзиночек со свежими ягодами и фруктами.</p>
-                </div>
-            </div>
-            <div class="products__photo">
-                <img class="products__img" src="assets/images/products/3.jpg" alt="">
-            </div>
-        </div>
-
-         <div class="products__item">
-            <div class="products__content">
-                <h3 class="products__title">Печенье</h3>
-                <div class="products__text">
-                    <p>Все наши печенья приготовлены по авторским рецептам, проверенным не только временем, но и нашими клиентами.</p>
-                </div>
-            </div>
-            <div class="products__photo">
-                <img class="products__img" src="assets/images/products/4.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="products__item">
-            <div class="products__content">
-                <h3 class="products__title">Хлеб</h3>
-                <div class="products__text">
-                    <p>К любому процессу, связанному с приготовлением хлеба, у нас особый подход. Поэтому мы ежедневно выпекаем хлеб с неизменным качеством и согласно всем актуальным стандартам.</p>
-                </div>
-            </div>
-            <div class="products__photo">
-                <img class="products__img" src="assets/images/products/5.jpg" alt="">
-            </div>
-        </div>-->
-
     </div> <!-- /.container -->
 </div>  <!-- /.products -->
 
@@ -356,7 +402,20 @@
             <div class="footer__content">
                 <div class="footer__logo">
                     <h4 class="footer__title">Сладкая выпечка</h4>
-                    <object class="footer__title__icon" id="footer_cupcake" data="assets/images/footer/footer_logo.svg" type="image/svg+xml"></object>
+                    <svg class="footer__title__icon" id="footer_cupcake" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 297 297" style="enable-background:new 0 0 297 297;" xml:space="preserve">
+                        <path d="M225.221,297c4.312,0,8.139-2.76,9.502-6.849l32.945-99.275c4.177-2.916,8.727-6.751,12.938-11.689
+                        c11.172-13.102,22.192-36.611,11.248-74.216C275.507,48.79,190.19,48.881,139.198,48.875l-3.58,0.002
+                        c-16.158,0-27.127-6.009-33.534-18.371c-5.166-9.967-5.32-20.43-5.321-20.489c0-3.549-1.878-6.834-4.937-8.634
+                        c-3.06-1.799-6.843-1.847-9.944-0.122C78.838,2.951,7.282,43.367,1.139,104.13c-2.88,28.478,6.341,56.116,32.623,82.323
+                        l35.336,103.698c1.363,4.09,5.191,6.849,9.503,6.849H225.221z M21.064,106.2c2.876-28.702,25.199-52.979,43.978-68.613
+                        c-3.349,13.262-4.678,29.392,2.343,42.916c7.358,14.178,21.809,22.549,42.946,24.881c47.793,5.271,75.637,12.104,93.104,22.849
+                        c17.414,10.711,25.335,26.031,26.272,50.982H57.922C31.005,155.266,18.607,130.715,21.064,106.2z M161.925,276.968v-77.721h33.698
+                        l-12.952,77.721H161.925z M121.148,276.968l-12.952-77.721h33.697v77.721H121.148z M59.914,199.247h27.974l12.951,77.721H85.821
+                        L59.914,199.247z M218.002,276.968h-15.021l12.951-77.721h27.974L218.002,276.968z M265.888,165.564
+                        c-5.631,6.844-12.291,10.827-16.172,12.745c-1.239-31.527-12.647-52.906-35.786-67.14c-20.421-12.561-49.799-20.006-101.402-25.696
+                        c-14.057-1.551-23.259-6.317-27.349-14.169c-4.427-8.494-3.147-20.245-0.317-30.526c7.203,13.253,21.747,28.132,50.756,28.132
+                        l3.593-0.002c45.397-0.017,121.265-0.075,133.411,41.66C279.298,133.51,277.033,152.013,265.888,165.564z"/>
+                    </svg>
                 </div>
                 <div class="footer__links">
                     <a class="footer__link footer__link--icon" href="#" target="_blank">
@@ -374,6 +433,11 @@
         </div>
     </div> <!-- /.container -->
 </footer> <!-- /.footer -->
+
+
+<!-- Javascript -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>
