@@ -27,15 +27,31 @@ $(function() {
     /* Header Button */
     let headerLinks = $('#headerLinks');
     let headerButton = $('#headerButton');
+    let windowWidth = $(window).innerWidth();
+
+    if ( windowWidth <= 1230 ) {
+        headerLinks.hide();
+    }
+
+
+    $(window).on('resize', function() {
+        windowWidth = $(window).innerWidth();
+        if ( windowWidth <= 1230 ) {
+            headerLinks.hide();
+            headerButton.removeClass('active');
+        } else {
+            headerLinks.show();
+        }
+    });
 
     headerButton.on('click', function(event) {
         event.preventDefault();
 
-        header.toggleClass('active');
-        headerLinks.toggleClass('show');
+        headerLinks.css('opacity', '1').slideToggle(500);
         headerButton.toggleClass('active');
 
     });
+
 
 
     /* Products Slider https://kenwheeler.github.io/slick/ */
