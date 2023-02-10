@@ -66,4 +66,28 @@ $(function() {
         dots: true
     });
 
+
+    /* Scroll Animation */
+    let scrollCenterPosition = scrollPosition + ($(window).height() / 2);
+
+    $('.scroll-text, .scroll-item').each(function() {
+            scrollAnimation($(this), scrollCenterPosition);
+        });
+
+    $(window).on('scroll', function() {
+        scrollCenterPosition = scrollPosition + ($(this).height() / 2);
+
+        $('.scroll-text, .scroll-item').each(function() {
+            scrollAnimation($(this), scrollCenterPosition);
+        });
+    });
+
+
+    function scrollAnimation(element, scrollCenterPosition) {
+        let elementOffset = element.offset().top;
+        if(scrollCenterPosition >= elementOffset) {
+            element.addClass('scroll-animation');
+        }
+    }
+
 });
