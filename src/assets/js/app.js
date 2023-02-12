@@ -71,8 +71,10 @@ $(function() {
     let scrollCenterPosition = scrollPosition + ($(window).height() / 2);
 
     $('.scroll-text, .scroll-item').each(function() {
-            scrollAnimation($(this), scrollCenterPosition);
-        });
+        scrollAnimation($(this), scrollCenterPosition);
+    });
+
+
 
     $(window).on('scroll', function() {
         scrollCenterPosition = scrollPosition + ($(this).height() / 2);
@@ -80,6 +82,7 @@ $(function() {
         $('.scroll-text, .scroll-item').each(function() {
             scrollAnimation($(this), scrollCenterPosition);
         });
+
     });
 
 
@@ -89,5 +92,7 @@ $(function() {
             element.addClass('scroll-animation');
         }
     }
+
+
 
 });
