@@ -144,7 +144,7 @@ p {
     }
 
     .header__links {
-        padding-top: 105px;
+        padding-top: 90px;
         position: absolute;
         top: 0;
         right: 0;
@@ -191,6 +191,10 @@ p {
     .header__icon {
         width: 27px;
         height: 27px;
+    }
+
+    .header__links {
+        padding-top: 80px;
     }
 
 }
@@ -847,6 +851,7 @@ p {
 .products__img {
     height: 100%;
     width: 100%;
+    display: block;
     object-fit: cover;
     position: absolute;
     top: 50%;
