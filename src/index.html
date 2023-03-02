@@ -385,16 +385,18 @@
             <div class="review__content">
                 <h3 class="review__title scroll-text">Оставьте свои контактные данные и мы с вами свяжемся</h3>
                 <form class="review__form scroll-item" id="form1" action="/" method="post" novalidate="true">
-                    <div class="review__item input-required">
+                    <div class="review__item">
                         <input class="review__input" data-required="true" type="text" name="form_text_1" placeholder="Имя" value>
                     </div>
-                    <div class="review__item input-required">
+                    <div class="review__item">
                         <input class="review__input" data-required="true" type="text" name="form_email_2" placeholder="Телефон" value>
                     </div>
-                    <div class="review__item input-required">
-                        <input class="review__input" data-required="true" type="email" name="form_email_3" placeholder="Email" value>
+                    <div class="review__item">
+                        <input class="review__input" data-required="true" data-email="true" type="email" name="form_email_3" placeholder="Email" value>
                     </div>
-                    <textarea class="review__input review__message" name="form_textarea_3" id="message" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+                    <div class="review__item">
+                        <textarea class="review__input review__message" name="form_textarea_3" id="message" cols="1" rows="7" placeholder="Ваш вопрос"></textarea>
+                    </div>
                     <button class="button__review" type="submit">Отправить</button>
                 </form>
             </div>

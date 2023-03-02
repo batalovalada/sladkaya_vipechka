@@ -27,14 +27,22 @@ function formValidation(form) {
 
     for (const input of allInputs) {
         removeError(input);
-        if (input.dataset.required == "true") {
-            if (input.value == "") {
-                console.log('not enough');
-                createError(input, 'Поле не заполнено!');
+
+        if (input.dataset.email == "true") {
+            if (!input.value.match(/[-.\w]+@([\w-]+\.)+[\w-]+/g)) {
+                removeError(input);
+                createError(input, 'Email введён неверно!');
                 result = false;
             }
         }
 
+        if (input.dataset.required == "true") {
+            if (input.value == "") {
+                removeError(input);
+                createError(input, 'Поле не заполнено!');
+                result = false;
+            }
+        }
     }
 
     return result
