@@ -239,6 +239,11 @@ p {
 
 .arrow {
     display: none;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    z-index: 1010;
+    transform: translateY(-50%);
     background: none;
     border: 0;
     cursor: pointer;
@@ -677,7 +682,7 @@ p {
     margin: 80px 0;
 }
 
-.about__main__title {
+.about__main-title {
     width: 100%;
     max-width: 400px;
 
@@ -725,7 +730,7 @@ p {
 
 @media (max-width: 991px) {
 
-    .about__main__title {
+    .about__main-title {
         margin-bottom: 50px;
         font-size: 44px;
     }
@@ -751,7 +756,7 @@ p {
         padding-left: 40px;
     }
 
-    .about__main__title {
+    .about__main-title {
         max-width: 300px;
         margin-bottom: 40px;
         font-size: 40px;
@@ -779,7 +784,7 @@ p {
         padding-left: 0;
     }
 
-    .about__main__title {
+    .about__main-title {
         max-width: 220px;
         font-size: 32px;
     }
@@ -810,7 +815,7 @@ p {
     color: #f6f7f1;
 }
 
-.products__main__title {
+.products__main-title {
     font-size: 48px;
     font-weight: 600;
 
@@ -933,7 +938,7 @@ p {
         padding-top: 50px;
     }
 
-    .products__main__title {
+    .products__main-title {
         margin-bottom: 50px;
         font-size: 44px;
     }
@@ -970,7 +975,7 @@ p {
         padding-top: 40px;
     }
 
-    .products__main__title {
+    .products__main-title {
         margin-bottom: 40px;
         font-size: 40px;
     }
@@ -983,7 +988,7 @@ p {
 
 @media (max-width: 414px) {
 
-    .products__main__title {
+    .products__main-title {
         margin-bottom: 30ox;
         font-size: 32px;
     }
@@ -1500,7 +1505,7 @@ p {
     margin-right: 7px;
 }
 
-.footer__title__icon {
+.footer__title-icon {
     width: 24px;
     height: 24px;
     fill: #f6f7f1;
@@ -1551,7 +1556,7 @@ p {
         font-size: 20px;
     }
 
-    .footer__title__icon {
+    .footer__title-icon {
         width: 20px;
         height: 20px;
     }
