@@ -739,6 +739,12 @@ p {
         padding: 30px 20px;
     }
 
+    .about__item:hover {
+        background-color: inherit;
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
     .about__title {
         font-size: 24px;
     }
@@ -1085,6 +1091,12 @@ p {
 
     .cards__item:hover .cards__photo {
         border-radius: 0;
+    }
+
+    .cards__item:hover {
+        background-color: inherit;
+        transform: translateY(0);
+        box-shadow: none;
     }
 
     .cards__photo {
