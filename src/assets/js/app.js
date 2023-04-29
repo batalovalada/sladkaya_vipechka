@@ -69,19 +69,29 @@ $(function() {
 
     /* Scroll Animation */
     let scrollCenterPosition = scrollPosition + ($(window).height() / 2);
+    //svg with mask
+    const cake = $('.scroll-full-cake'); 
+    const cakeImg = $('.scroll-cake-img');
+    //svg without mask
+    const review = $('.scroll-review');
 
     $('.scroll-text, .scroll-item').each(function() {
         scrollAnimation($(this), scrollCenterPosition);
     });
 
-
+    /* svg animation */
+    scrollSvg(cake, scrollCenterPosition, true, cakeImg, 150);
+    scrollSvg(review, scrollCenterPosition, false, null, 200);
 
     $(window).on('scroll', function() {
         scrollCenterPosition = scrollPosition + ($(this).height() / 2);
-
+        
         $('.scroll-text, .scroll-item').each(function() {
             scrollAnimation($(this), scrollCenterPosition);
         });
+
+        scrollSvg(cake, scrollCenterPosition, true, cakeImg, 150);
+        scrollSvg(review, scrollCenterPosition, false, null, 200);
 
     });
 
@@ -93,6 +103,16 @@ $(function() {
         }
     }
 
-
+    //scroll animation for svg with mask or not
+    function scrollSvg(element, scrollCenterPosition, mask, img, time) {
+        let elementOffset = mask ? img.offset().top : element.offset().top;
+        if (scrollCenterPosition >= elementOffset) {
+            element.children().each(function(index) {
+                $(this).delay(time * index).queue(function () {
+                    $(this).addClass('scroll-animation').dequeue();
+                });
+            });
+        }
+    }
 
 });

@@ -38,6 +38,11 @@ p {
     margin: 0 auto;
 }
 
+/* Page */
+.page {
+    overflow: hidden;
+}
+
 /* Scroll */
 .scroll-text {
     opacity: 0;
@@ -59,6 +64,37 @@ p {
 .scroll-item.scroll-animation {
     opacity: 1;
     transform: translateX(0);
+}
+
+.scroll-cake {
+    transform: translateX(-5px);
+    transition: transform .6s ease-in-out;
+}
+
+.scroll-cake.scroll-animation {
+    transform: translateX(0);;
+}
+
+.scroll-cherry {
+    opacity: 0;
+    transform: scale(-.8) translateY(-60px);
+    transition: opacity .3s linear, transform .3s linear;
+}
+
+.scroll-cherry.scroll-animation {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.scroll-chocolate {
+    opacity: 0;
+    transform: skew(20deg, 20deg);
+    transition: opacity .3s ease-in-out, transform .6s ease-in-out;
+}
+
+.scroll-chocolate.scroll-animation {
+    opacity: 1;
+    transform: skew(0);
 }
 
 
@@ -700,6 +736,7 @@ p {
 }
 
 .about__item {
+    cursor: pointer;
     width: 30%;
 
     padding: 40px 25px;
@@ -1022,6 +1059,7 @@ p {
 }
 
 .cards__item {
+    cursor: pointer;
     width: 30%;
     margin-bottom: 30px;
 
@@ -1402,8 +1440,11 @@ p {
 .review__svg {
     position: absolute;
     bottom: -125px;
-    right: 0;
+    right: -116px;
     z-index: 1;
+
+    width: 809px;
+    height: 738px;
 }
 
 .error-label {
@@ -1436,7 +1477,7 @@ p {
     }
 
     .review__svg {
-        width: 525px;
+        width: 759px;
         height: 688px;
         bottom: -110px;
     }
